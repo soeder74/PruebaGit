@@ -1,14 +1,14 @@
 {
-  "name": "Plantilla Reframwork",
+  "name": "Ejercicio_Git",
   "description": "Proceso que sirve de plantilla de reframwork",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.16.0]",
-    "UiPath.Mail.Activities": "[1.18.1]",
-    "UiPath.PDF.Activities": "[3.10.1]",
-    "UiPath.System.Activities": "[22.10.3]",
-    "UiPath.UIAutomation.Activities": "[22.10.3]",
-    "UiPath.WebAPI.Activities": "[1.13.2]"
+    "UiPath.Excel.Activities": "[2.16.2]",
+    "UiPath.Mail.Activities": "[1.18.2]",
+    "UiPath.PDF.Activities": "[3.11.0]",
+    "UiPath.System.Activities": "[22.10.4]",
+    "UiPath.UIAutomation.Activities": "[22.10.5]",
+    "UiPath.WebAPI.Activities": "[1.13.3]"
   },
   "webServices": [],
   "entitiesStores": [],
