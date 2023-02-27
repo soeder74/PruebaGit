@@ -6,11 +6,12 @@
     <x:Property Name="in_dtProyectoFinal" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_rutaOutput" Type="InArgument(x:String)" />
     <x:Property Name="in_rutaFechaActual" Type="InArgument(x:String)" />
+    <x:Property Name="out_fechaActual" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,2970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,4112</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Traducir_Datos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -94,50 +95,123 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Traducir_Datos" sap:VirtualizedContainerService.HintSize="967,2905" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Traducir_Datos" sap:VirtualizedContainerService.HintSize="1093,4047" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="descripcion" />
       <Variable x:TypeArguments="x:String" Name="tipo" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtProyectos" />
-      <Variable x:TypeArguments="x:String" Name="fechaActual" />
       <Variable x:TypeArguments="x:Boolean" Name="existOutput" />
+      <Variable x:TypeArguments="x:String" Name="in_rutaOutput" />
+      <Variable x:TypeArguments="x:String" Name="in_rutaFechaActual" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="925,2817" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1051,3959" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Traducir" sap:VirtualizedContainerService.HintSize="887,2589" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Traducir" sap:VirtualizedContainerService.HintSize="1013,3731" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtProyectos]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="845,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Hoja1" WorkbookPath="C:\Users\M44401551\Documents\proyectos.xlsx" />
-          <ui:BuildDataTable DataTable="[out_dtProyectTraducido]" DisplayName="Build out_dtProyectTraducido" sap:VirtualizedContainerService.HintSize="845,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Proyect_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-          <Assign sap:VirtualizedContainerService.HintSize="845,82" sap2010:WorkflowViewState.IdRef="Assign_5">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[fechaActual]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("dd_MM_yyyy")]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:FolderExistsX DisplayName="Folder Exists" Exists="[existOutput]" sap:VirtualizedContainerService.HintSize="845,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[in_rutaOutput+&quot;Output&quot;]" />
-          <If Condition="[existOutput]" sap:VirtualizedContainerService.HintSize="845,448" sap2010:WorkflowViewState.IdRef="If_2">
-            <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="971,249" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="358,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[in_rutaFechaActual+fechaActual]" />
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_rutaOutput]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\M44401551\Documents\PruebaGit\</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="971,249" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_rutaFechaActual]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">C:\Users\M44401551\Documents\PruebaGit\Output\</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="971,255" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,176" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtProyectos]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="358,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Hoja1" WorkbookPath="C:\Users\M44401551\Documents\proyectos.xlsx" />
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <ui:BuildDataTable DataTable="[out_dtProyectTraducido]" DisplayName="Build out_dtProyectTraducido" sap:VirtualizedContainerService.HintSize="971,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Proyect_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <Assign sap:VirtualizedContainerService.HintSize="971,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_fechaActual]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("dd_MM_yyyy")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:FolderExistsX DisplayName="Folder Exists" Exists="[existOutput]" sap:VirtualizedContainerService.HintSize="971,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[in_rutaOutput+&quot;Output&quot;]" />
+          <If Condition="[existOutput]" sap:VirtualizedContainerService.HintSize="971,778" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="526,618" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="existFecha" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:FolderExistsX DisplayName="Folder Exists" Exists="[existFecha]" sap:VirtualizedContainerService.HintSize="484,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_4" Path="[in_rutaFechaActual+out_fechaActual]" />
+                <If Condition="[not existFecha]" sap:VirtualizedContainerService.HintSize="484,357" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="358,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[in_rutaFechaActual+out_fechaActual]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
               </Sequence>
             </If.Then>
             <If.Else>
@@ -148,109 +222,110 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="358,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[in_rutaOutput+&quot;Output&quot;]" />
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="358,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[in_rutaFechaActual+fechaActual]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="358,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[in_rutaFechaActual+out_fechaActual]" />
               </Sequence>
             </If.Else>
           </If>
-          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="845,1490" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://translate.google.es/?hl=es">
+          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="971,215" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://translate.google.es/?hl=es">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1388" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtProyectos]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="476,1300" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                    <ui:ForEachRow.Body>
-                      <ActivityAction x:TypeArguments="sd:DataRow">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                        </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="442,1185" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,1097" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type 'Tipo Ingles'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,135" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[CurrentRow(1).ToString]">
-                              <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f151557-6889-4b0c-ab43-eb734a5e0bc7" InformativeScreenshot="51d5a3f4deb147a59663bf8a9e633fe6" Selector="&lt;webctrl tag='TEXTAREA' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:TypeInto.Target>
-                            </ui:TypeInto>
-                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Tipo Español'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
-                              <ui:GetValue.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="339ca29a-4a6b-450d-be93-9d56ada3c71c" InformativeScreenshot="46cdcb27d14d456cadc2aa6502ba5e93" Selector="&lt;webctrl class='ryNqvb' tag='SPAN' aaname='*' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:GetValue.Target>
-                              <ui:GetValue.Value>
-                                <OutArgument x:TypeArguments="x:String">[tipo]</OutArgument>
-                              </ui:GetValue.Value>
-                            </ui:GetValue>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type 'Descripcion Ingles'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,135" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[CurrentRow(3).ToString]">
-                              <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f151557-6889-4b0c-ab43-eb734a5e0bc7" InformativeScreenshot="51d5a3f4deb147a59663bf8a9e633fe6" Selector="&lt;webctrl tag='TEXTAREA' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:TypeInto.Target>
-                            </ui:TypeInto>
-                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Descripcion Español'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_2">
-                              <ui:GetValue.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="339ca29a-4a6b-450d-be93-9d56ada3c71c" InformativeScreenshot="46cdcb27d14d456cadc2aa6502ba5e93" Selector="&lt;webctrl class='ryNqvb' tag='SPAN' aaname='*' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:GetValue.Target>
-                              <ui:GetValue.Value>
-                                <OutArgument x:TypeArguments="x:String">[descripcion]</OutArgument>
-                              </ui:GetValue.Value>
-                            </ui:GetValue>
-                            <ui:AddDataRow ArrayRow="{x:Null}" DataRow="{x:Null}" DataTable="[out_dtProyectTraducido]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[out_dtProyectTraducido]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Hoja1" WorkbookPath="[in_rutaFechaActual+fechaActual.ToString+&quot;\&quot;+CurrentRow(2).ToString+&quot;_&quot;+CurrentRow(0).ToString+&quot;.xlsl&quot;]" />
-                          </Sequence>
-                        </Sequence>
-                      </ActivityAction>
-                    </ui:ForEachRow.Body>
-                  </ui:ForEachRow>
+                  <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="358,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
                 </Sequence>
               </ActivityAction>
             </ui:OpenBrowser.Body>
           </ui:OpenBrowser>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtProyectoFinal]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="971,1302" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="442,1185" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,1097" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type 'Tipo Ingles'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,135" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[CurrentRow(1).ToString]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f151557-6889-4b0c-ab43-eb734a5e0bc7" InformativeScreenshot="51d5a3f4deb147a59663bf8a9e633fe6" Selector="&lt;webctrl tag='TEXTAREA' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Tipo Español'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="339ca29a-4a6b-450d-be93-9d56ada3c71c" InformativeScreenshot="46cdcb27d14d456cadc2aa6502ba5e93" Selector="&lt;webctrl class='ryNqvb' tag='SPAN' aaname='*' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[tipo]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type 'Descripcion Ingles'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,135" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[CurrentRow(3).ToString]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f151557-6889-4b0c-ab43-eb734a5e0bc7" InformativeScreenshot="51d5a3f4deb147a59663bf8a9e633fe6" Selector="&lt;webctrl tag='TEXTAREA' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Descripcion Español'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="339ca29a-4a6b-450d-be93-9d56ada3c71c" InformativeScreenshot="46cdcb27d14d456cadc2aa6502ba5e93" Selector="&lt;webctrl class='ryNqvb' tag='SPAN' aaname='*' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[descripcion]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0).ToString,tipo.ToString,CurrentRow(2).ToString,descripcion.ToString}]" DataTable="[out_dtProyectTraducido]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[out_dtProyectTraducido]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Hoja1" WorkbookPath="[in_rutaFechaActual+out_fechaActual.ToString+&quot;\&quot;+CurrentRow(2).ToString+&quot;_&quot;+CurrentRow(0).ToString+&quot;.xlsx&quot;]" />
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="891,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1017,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
