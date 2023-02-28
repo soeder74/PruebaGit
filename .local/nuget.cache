@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j1w6zPl1kDXiWACloLVcvYgZfS5MFbAzFrGQnnAUi76d0LIlJR94WRX852roTE/LphX+7VAigOk7diwEGSLU+A==",
+  "dgSpecHash": "lxpGN8g8j8JMGG8vr/XjLCmeSytjHh8nx8olS+BMM2Nb0SR4M9DkGQnG6FFoXILy41zqkNcrFRkWOLsbWrfSVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\M44401551\\Documents\\PruebaGit\\.local\\",
   "expectedPackageFiles": [
@@ -112,7 +112,7 @@
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.ocr.contracts\\2.14.0\\uipath.ocr.contracts.2.14.0.nupkg.sha512",
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.pdf.activities\\3.11.0\\uipath.pdf.activities.3.11.0.nupkg.sha512",
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.platform\\22.10.2\\uipath.platform.22.10.2.nupkg.sha512",
-    "C:\\Users\\M44401551\\.nuget\\packages\\uipath.system.activities\\22.10.4\\uipath.system.activities.22.10.4.nupkg.sha512",
+    "C:\\Users\\M44401551\\.nuget\\packages\\uipath.system.activities\\22.10.1\\uipath.system.activities.22.10.1.nupkg.sha512",
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.uiautomation.activities\\22.10.5\\uipath.uiautomation.activities.22.10.5.nupkg.sha512",
     "C:\\Users\\M44401551\\.nuget\\packages\\uipath.vision\\3.6.0\\uipath.vision.3.6.0.nupkg.sha512",

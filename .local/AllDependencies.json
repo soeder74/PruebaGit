@@ -2449,7 +2449,7 @@
           }
         }
       },
-      "UiPath.System.Activities/22.10.4": {
+      "UiPath.System.Activities/22.10.1": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "16.0.0",
@@ -2541,12 +2541,6 @@
           },
           "lib/net461/zh-CN/UiPath.System.Activities.resources.dll": {
             "locale": "zh-CN"
-          },
-          "lib/net461/zh-TW/UiPath.System.Activities.Design.resources.dll": {
-            "locale": "zh-TW"
-          },
-          "lib/net461/zh-TW/UiPath.System.Activities.resources.dll": {
-            "locale": "zh-TW"
           },
           "lib/net461/zu/UiPath.System.Activities.Design.resources.dll": {
             "locale": "zu"
@@ -5490,7 +5484,7 @@
           }
         }
       },
-      "UiPath.System.Activities/22.10.4": {
+      "UiPath.System.Activities/22.10.1": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "16.0.0",
@@ -5582,12 +5576,6 @@
           },
           "lib/net461/zh-CN/UiPath.System.Activities.resources.dll": {
             "locale": "zh-CN"
-          },
-          "lib/net461/zh-TW/UiPath.System.Activities.Design.resources.dll": {
-            "locale": "zh-TW"
-          },
-          "lib/net461/zh-TW/UiPath.System.Activities.resources.dll": {
-            "locale": "zh-TW"
           },
           "lib/net461/zu/UiPath.System.Activities.Design.resources.dll": {
             "locale": "zu"
@@ -9890,10 +9878,10 @@
         "uipath.platform.nuspec"
       ]
     },
-    "UiPath.System.Activities/22.10.4": {
-      "sha512": "aRMsAL6fcT6u3TPMBvgHMi/zuD5O/8mcSrtjMiCcuJyZBFRn8K2BKnQW7dWE7oCzsPR8DUqe/P8WjcYGVTLIWQ==",
+    "UiPath.System.Activities/22.10.1": {
+      "sha512": "u1utzCN5pcmarshXnK9kidlxKdpnOQCR08O/z/7bmmiFmpP25jv5tad9MTAD3AIK1gwYJrLOoY+LD7J9Okx1EA==",
       "type": "package",
-      "path": "uipath.system.activities/22.10.4",
+      "path": "uipath.system.activities/22.10.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9910,7 +9898,6 @@
         "build/net461/ru/WorkerProcess.resources.dll",
         "build/net461/tr/WorkerProcess.resources.dll",
         "build/net461/zh-CN/WorkerProcess.resources.dll",
-        "build/net461/zh-TW/WorkerProcess.resources.dll",
         "build/net461/zu/WorkerProcess.resources.dll",
         "lib/net461/UiPath.OrchestratorClient.dll",
         "lib/net461/UiPath.System.Activities.Design.dll",
@@ -9937,8 +9924,6 @@
         "lib/net461/tr/UiPath.System.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.resources.dll",
-        "lib/net461/zh-TW/UiPath.System.Activities.Design.resources.dll",
-        "lib/net461/zh-TW/UiPath.System.Activities.resources.dll",
         "lib/net461/zu/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/zu/UiPath.System.Activities.resources.dll",
         "lib/net5.0-windows7.0/UiPath.OrchestratorClient.dll",
@@ -9966,8 +9951,6 @@
         "lib/net5.0-windows7.0/tr/UiPath.System.Activities.resources.dll",
         "lib/net5.0-windows7.0/zh-CN/UiPath.System.Activities.Design.resources.dll",
         "lib/net5.0-windows7.0/zh-CN/UiPath.System.Activities.resources.dll",
-        "lib/net5.0-windows7.0/zh-TW/UiPath.System.Activities.Design.resources.dll",
-        "lib/net5.0-windows7.0/zh-TW/UiPath.System.Activities.resources.dll",
         "lib/net5.0-windows7.0/zu/UiPath.System.Activities.Design.resources.dll",
         "lib/net5.0-windows7.0/zu/UiPath.System.Activities.resources.dll",
         "lib/net5.0/UiPath.OrchestratorClient.dll",
@@ -9983,9 +9966,8 @@
         "lib/net5.0/ru/UiPath.System.Activities.resources.dll",
         "lib/net5.0/tr/UiPath.System.Activities.resources.dll",
         "lib/net5.0/zh-CN/UiPath.System.Activities.resources.dll",
-        "lib/net5.0/zh-TW/UiPath.System.Activities.resources.dll",
         "lib/net5.0/zu/UiPath.System.Activities.resources.dll",
-        "uipath.system.activities.22.10.4.nupkg.sha512",
+        "uipath.system.activities.22.10.1.nupkg.sha512",
         "uipath.system.activities.nuspec"
       ]
     },
@@ -10796,7 +10778,7 @@
       "UiPath.Excel.Activities >= 2.16.2 <= 2.16.2",
       "UiPath.Mail.Activities >= 1.18.2 <= 1.18.2",
       "UiPath.PDF.Activities >= 3.11.0 <= 3.11.0",
-      "UiPath.System.Activities >= 22.10.4 <= 22.10.4",
+      "UiPath.System.Activities >= 22.10.1 <= 22.10.1",
       "UiPath.UIAutomation.Activities >= 22.10.5 <= 22.10.5",
       "UiPath.WebAPI.Activities >= 1.13.3 <= 1.13.3"
     ]
@@ -10833,7 +10815,7 @@
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[22.10.4, 22.10.4]"
+            "version": "[22.10.1, 22.10.1]"
           },
           "UiPath.UIAutomation.Activities": {
             "include": "Runtime",
