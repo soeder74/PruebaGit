@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>635.2,607.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,816</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -30,6 +30,7 @@
       <x:String>System.Drawing</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -52,21 +53,22 @@
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Cleaning Desktop sequence" sap:VirtualizedContainerService.HintSize="615.2,507.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="Cleaning Desktop sequence" sap:VirtualizedContainerService.HintSize="617,751" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="573.6,414.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[apps]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="575,663" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[apps]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.4,280" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,538" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:GenericValue" Name="state" />
             </Sequence.Variables>
@@ -75,12 +77,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.ToUpper]" sap:VirtualizedContainerService.HintSize="496.8,187.2" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.ToUpper]" sap:VirtualizedContainerService.HintSize="497,450" sap2010:WorkflowViewState.IdRef="Switch`1_2">
               <Switch.Default>
                 <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No se reconoce la actividad &quot;+item]" />
               </Switch.Default>
-              <ui:KillProcess Process="{x:Null}" x:Key="IEXPLORE" ContinueOnError="True" DisplayName="Kill iexplore" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="iexplore" />
-              <Sequence x:Key="FIREFOX" DisplayName="Sequence Firefox" sap:VirtualizedContainerService.HintSize="505.6,555.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" x:Key="IEXPLORE" ContinueOnError="True" DisplayName="Kill iexplore" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="iexplore" />
+              <Sequence x:Key="FIREFOX" DisplayName="Sequence Firefox" sap:VirtualizedContainerService.HintSize="526,631" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="ui:Browser" Name="fbrowser" />
                 </Sequence.Variables>
@@ -90,13 +92,13 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="Firefox" ContinueOnError="True" DisplayName="Attach Browser 'firefox.exe'" sap:VirtualizedContainerService.HintSize="464,246.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="76b5c0052d52e4d22b7e5043a6d22c22" Selector="&lt;html app='firefox.exe' /&gt;" TimeoutMS="1000" UiBrowser="[fbrowser]">
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="Firefox" ContinueOnError="True" DisplayName="Attach Browser 'firefox.exe'" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="76b5c0052d52e4d22b7e5043a6d22c22" Selector="&lt;html app='firefox.exe' /&gt;" TimeoutMS="1000" UiBrowser="[fbrowser]">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,99" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,80" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,17 +114,17 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:BrowserScope>
-                <If Condition="[fbrowser isnot nothing]" sap:VirtualizedContainerService.HintSize="464,216" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[fbrowser isnot nothing]" sap:VirtualizedContainerService.HintSize="484,276" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <ui:CloseApplication ContinueOnError="True" DisplayName="Close application" sap:VirtualizedContainerService.HintSize="314,68" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                    <ui:CloseApplication ContinueOnError="True" DisplayName="Close application" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
                       <ui:CloseApplication.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[fbrowser]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[fbrowser]" Id="9878cb2a-4b85-4957-8845-d6f81ba892fc" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                       </ui:CloseApplication.Target>
                     </ui:CloseApplication>
                   </If.Then>
                 </If>
               </Sequence>
-              <Sequence x:Key="CHROME" DisplayName="Sequence Chrome" sap:VirtualizedContainerService.HintSize="505.6,555.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence x:Key="CHROME" DisplayName="Sequence Chrome" sap:VirtualizedContainerService.HintSize="400,221" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="ui:Browser" Name="cBrowser" />
                 </Sequence.Variables>
@@ -131,37 +133,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="Chrome" ContinueOnError="True" DisplayName="Attach  'chrome.exe'" sap:VirtualizedContainerService.HintSize="464,52.8" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="001ff998b2a6f1cccbbad48cb582d12c" Selector="&lt;html app='chrome.exe' /&gt;" TimeoutMS="1000" UiBrowser="[cBrowser]">
-                  <ui:BrowserScope.Body>
-                    <ActivityAction x:TypeArguments="x:Object">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,99" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:BrowserScope.Body>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:BrowserScope>
-                <If Condition="[cBrowser isnot nothing]" DisplayName="If Chrome" sap:VirtualizedContainerService.HintSize="464,216" sap2010:WorkflowViewState.IdRef="If_3">
-                  <If.Then>
-                    <ui:CloseApplication ContinueOnError="True" DisplayName="Close application" sap:VirtualizedContainerService.HintSize="314,68" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
-                      <ui:CloseApplication.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[cBrowser]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
-                      </ui:CloseApplication.Target>
-                    </ui:CloseApplication>
-                  </If.Then>
-                </If>
+                <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill iexplore" sap:VirtualizedContainerService.HintSize="358,133" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="[&quot;chrome&quot;]" />
               </Sequence>
             </Switch>
           </Sequence>
